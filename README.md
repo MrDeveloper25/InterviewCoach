@@ -1,4 +1,3 @@
-
 # InterviewCoach - Plataforma de Entrenamiento para Entrevistas Técnicas
 
 ## Integrantes
@@ -20,12 +19,43 @@
 
 Diseñar y desarrollar una plataforma web interactiva de entrenamiento para entrevistas técnicas de programación, que ofrezca simulacros con temporizador, retroalimentación inmediata y rutas de estudio personalizadas por empresa y por rama de la programación, con el fin de que estudiantes y profesionales practiquen en condiciones realistas, midan su progreso y mejoren su desempeño en procesos de selección.
 
+## Alcance del MVP
+
+Para poder terminar el proyecto en el tiempo disponible, la primera versión se limita a lo siguiente:
+
+| Elemento | Alcance fijado |
+| --- | --- |
+| Empresas | Google y Amazon |
+| Rama | Algoritmos y estructuras de datos |
+| Nivel | Junior |
+| Lenguaje | JavaScript (único lenguaje) |
+
+### Fuera del alcance del MVP
+
+* Otras empresas (Oracle, Microsoft, Meta, etc.).
+* Otras ramas (backend, frontend, datos, DevOps, ciberseguridad, etc.).
+* Niveles intermedio y senior.
+* Otros lenguajes de programación.
+* Diseño de sistemas y entrevistas conductuales.
+
+Cualquier ampliación requiere la aprobación del equipo y debe registrarse en este README.
+
+### Aprobación del alcance
+
+Cada integrante aprueba el alcance escribiendo su nombre y la fecha en su fila (mediante un commit en el Pull Request de esta issue).
+
+| Integrante | Estado | Fecha |
+| --- | --- | --- |
+| Arturo Said González Mercado | Pendiente | |
+| José Eduardo González Hernández | Pendiente | |
+| Leonardo Axel Luna Nochebuena | Pendiente | |
+
 ## Funcionalidades
 
 La versión actual incluye la interfaz de usuario y una API de demostración:
 
-1. **Inicio:** propuesta de valor, pregunta de muestra con su retroalimentación y empresas objetivo (Google, Amazon, Oracle, Microsoft y Meta).
-2. **Simulacro:** configuración de empresa, rama (Backend, Datos y Frontend) y nivel; temporizador de 45 minutos, enunciado, pistas progresivas, editor de código y ejecución de pruebas de ejemplo.
+1. **Inicio:** propuesta de valor, pregunta de muestra con su retroalimentación y empresas objetivo (Google y Amazon).
+2. **Simulacro:** selección de empresa (Google o Amazon) con rama, nivel y lenguaje fijos según el alcance; temporizador de 45 minutos, enunciado, pistas progresivas, editor de código en JavaScript y ejecución de pruebas de ejemplo.
 3. **Reporte del simulacro:** puntaje, tiempo usado y recomendaciones.
 4. **Mi progreso:** racha, nivel de preparación, dominio por tema y plan semanal.
 5. **Tema claro y oscuro,** con diseño adaptable a celular.
@@ -33,7 +63,8 @@ La versión actual incluye la interfaz de usuario y una API de demostración:
 ### Próximas funcionalidades
 
 * Ejecución real de código en un entorno aislado, con casos de prueba.
-* Más ramas, problemas y simulacros por empresa.
+* Más problemas de algoritmos y estructuras de datos por empresa.
+* Ampliar el alcance (más empresas, ramas, niveles y lenguajes) después de terminar el MVP.
 * Entrevista con un entrevistador virtual y práctica de preguntas conductuales.
 * Cuentas de usuario, historial de simulacros y plan de estudio personalizado.
 
@@ -79,25 +110,3 @@ La primera vez, Vercel CLI pide iniciar sesión y confirmar la configuración; a
 ## Despliegue
 
 El proyecto se publica en Vercel con el preset **Other**. Cada cambio fusionado en `main` genera un nuevo despliegue, y cada Pull Request genera una URL de vista previa.
-=======
-# InterviewCoach
-
-Plataforma web para practicar entrevistas técnicas. Node.js (funciones serverless) + HTML con Tailwind y Alpine.js, desplegada en Vercel.
-
-## Estructura
-- `public/index.html`: interfaz (inicio, simulacro, progreso).
-- `api/problems.js` y `api/progress.js`: endpoints Node.js.
-- `data/problems.js`: banco de problemas de ejemplo.
-
-## Ejecutar en local
-```
-npm run dev
-```
-Abre la URL que muestra Vercel CLI (normalmente http://localhost:3000).
-
-## Desplegar en Vercel
-1. Sube el repo a GitHub.
-2. En vercel.com: Add New > Project > importa el repo.
-3. Framework Preset: **Other**. Deploy.
-Cada push a `main` se despliega solo; cada Pull Request genera una URL de vista previa.
-
