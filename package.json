@@ -1,0 +1,10 @@
+{
+  "name": "interviewcoach",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plataforma web para practicar entrevistas técnicas de programación",
+  "scripts": {
+    "dev": "npx vercel dev"
+  },
+  "engines": { "node": ">=18" }
+}
