@@ -68,6 +68,11 @@ function app() {
     get company() { return this.companies.find((c) => c.id === this.selectedCompany) || null; },
     companyName(id) { const c = this.companies.find((x) => x.id === id); return c ? c.name : id; },
     problemById(id) { return this.bank.find((p) => p.id === id) || null; },
+    // Alpine puede reevaluar la etiqueta justo cuando la sesión se cierra, antes de quitar la plantilla.
+    get sessionLabel() {
+      if (!this.session) return '';
+      return this.companyName(this.session.companyId) + ' · Junior' + (this.session.mode === 'practica' ? ' · Práctica' : '');
+    },
     get mockProblems() { return this.session ? this.session.problemIds.map((id) => this.problemById(id)) : []; },
     get current() { return this.session ? this.problemById(this.session.problemIds[this.session.activeIndex]) : null; },
     get remaining() { return this.session ? Math.max(0, Math.ceil((this.session.deadline - this.now) / 1000)) : 0; },
